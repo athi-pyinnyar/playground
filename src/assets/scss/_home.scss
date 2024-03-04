@@ -1,0 +1,171 @@
+.home{
+    .banner{
+        background: orange;
+        .container{
+            position: relative;
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            .start-logo{
+                position: absolute;
+                @include p-middle;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                visibility: hidden;
+                animation: showAnimation 0s ease-in 1s,fadein 8s, fadein 500ms infinite alternate, fadeout 3s alternate;
+                animation-delay: 1s,1s,9s,13s;
+                animation-fill-mode: forwards;
+                color: white;
+                .wa-txt{
+                    font-size: 3rem;
+                    animation: fontsizesmall 3s;
+                    animation-delay: 13s;
+                }
+                .font-2{
+                    font-size: 4rem;
+                    animation: fontsizesmall 3s;
+                    animation-delay: 13s;
+                }
+            }
+            .mac{
+                position: relative;
+                flex: 0 0 60%;
+                .mac-img{
+                    img{
+                        visibility: hidden;
+                        animation: showAnimation 0s ease-in 1s,fadein 8s alternate;
+                        animation-fill-mode: forwards;
+                        animation-delay: 15s;
+                        height: 500px;
+                    }
+                    .mac-inner-content{
+                        position: absolute;
+                        top: 3rem;
+                        @include px-middle;
+                        width: 100%;
+                        .wa-logo{
+                            visibility: hidden;
+                            animation: showAnimation 0s ease-in 4s, fadein 8s alternate;
+                            animation-fill-mode: forwards;
+                            animation-delay: 17s, 17s;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                        }
+                    }
+                }
+            }
+            .phone{
+                position: relative;
+                align-self: end;
+                display: flex;
+                justify-content: center;
+                .phone-img{
+                    img{
+                        visibility: hidden;
+                        animation: showAnimation 0s ease-in 1s,fadein 8s alternate;
+                        animation-fill-mode: forwards;
+                        animation-delay: 15s;
+                        height: 380px;
+                    }
+                    .phone-inner-content{
+                        position: absolute;
+                        top: 2rem;
+                        height: calc(100% - 2rem);
+                        @include px-middle;
+                        width: 100%;
+                        .wa-logo{
+                            visibility: hidden;
+                            animation: showAnimation 0s ease-in 4s, fadein 8s alternate;
+                            animation-fill-mode: forwards;
+                            animation-delay: 17s, 17s;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            span.wa-txt{
+                                font-size: 0.9rem;
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .home{
+        .banner{
+            position: relative;
+            background: orange;
+            min-height: calc(100vh - 48px);
+            .container{
+                flex-direction: column;
+                .logo-container{
+                    display: flex;
+                    flex-direction: column;
+                    flex: auto;
+                    align-items: center;
+                    justify-content: center;
+                    h1{
+                        font-size: 2.5rem;
+                    }
+                    h3{
+                        font-size: 3rem;
+                    }
+                }
+                .ios-phone{
+                    padding: 1rem;
+                    img{
+                        height: calc(100vh - 300px);
+                    }
+                }
+    
+            }
+        }
+    }
+}
+
+@keyframes showAnimation {
+    to {
+        visibility: unset;
+    }
+}
+@keyframes hideAnimation {
+    to {
+        visibility: hidden;
+    }
+}
+
+@keyframes fadein {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+@keyframes fadeout {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+}
+@keyframes fontsizesmall {
+    to {
+      font-size: 0.1rem;
+    }
+}
+@keyframes typing {
+    from { width: 0 }
+    to { 
+        
+        width: 100% 
+    }
+}

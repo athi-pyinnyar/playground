@@ -1,0 +1,52 @@
+@use "sass:meta";
+@mixin shadow($args...){
+    $property: 'box-shadow';
+    $size: 'md';
+    $color: lightgrey;
+    @debug meta.keywords($args);
+    @if length(meta.keywords($args)) > 0 {
+        @each $key, $value in meta.keywords($args) {
+            @if $key=='property' {
+                $property: $value;
+            }
+            @if $key=='size' {
+                $size: $value;
+            }
+            @if $key=='color' {
+                $color: $value;
+            }
+            @if $property == 'box-shadow' {
+                @if $size=='sm' {
+                    #{$property}: 0px 0px 0.25rem $color;
+                }
+                @if $size=='md' {
+                    #{$property}: 0px 0px 0.5rem $color;
+                }
+                @if $size=='lg' {
+                    #{$property}: 0px 0px 1rem $color;
+                }
+            }
+            @if $property == 'text-shadow' {
+                #{$property}: 2px 2px 2px $color;
+            }
+        }
+    } @else {
+        #{$property}: 0px 0px 0.5rem $color;
+    }
+}
+@mixin px-middle{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+@mixin py-middle{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+@mixin p-middle{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}

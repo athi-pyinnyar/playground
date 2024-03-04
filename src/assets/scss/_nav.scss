@@ -1,0 +1,28 @@
+.nav-bar{
+    background: white;
+    display: flex;
+    padding: 1rem;
+    align-items: center;
+    // @include shadow($size:'sm', $color: red);
+    @include shadow($property: 'box-shadow');
+    nav{
+        margin-left: auto;
+        ul{
+            margin: 0;
+            display: flex;
+            gap: 0.5rem;
+            list-style: none;
+        }
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .nav-bar{
+        nav{
+            display: none;
+        }
+    }
+    .nav-bar.sp-none{
+        display: none;
+    }
+}

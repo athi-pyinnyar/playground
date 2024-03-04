@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  background: white;
+  margin: 0;
+}
+body a {
+  text-decoration: none;
+  color: unset;
+}
+
+.nav-bar {
+  background: white;
+  display: flex;
+  padding: 1rem;
+  @apply drop-shadow-md;
+}
+.nav-bar nav {
+  margin-left: auto;
+}
+.nav-bar nav ul {
+  margin: 0;
+  display: flex;
+  gap: 0.5rem;
+  list-style: none;
+}
+
+/*# sourceMappingURL=style.css.map */
