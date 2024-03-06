@@ -1,10 +1,24 @@
 .nav-bar{
+    position: sticky;
+    top: 0;
     background: white;
     display: flex;
     padding: 1rem;
     align-items: center;
     // @include shadow($size:'sm', $color: red);
     @include shadow($property: 'box-shadow');
+    z-index: 99999;
+    .nav-logo{
+        display: flex;
+        align-items: baseline;
+        gap: 0.5rem;
+        color: lightslategray;
+        font-weight: bold;
+        .special-char::first-letter{
+            color: $main_color;
+            font-size: 1.5rem;
+        }
+    }
     nav{
         margin-left: auto;
         ul{

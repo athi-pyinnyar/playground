@@ -1,59 +1,168 @@
 .home{
     .banner{
-        background: orange;
+        position: relative;
+        display: flex;
+        height: 550px;
+        background: #f6f6f6;
+        padding: 2rem 1rem;
+        .start-logo{
+            @include p-middle;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            visibility: hidden;
+            animation: showAnimation 0s ease-in 1s,fadein 5s, movetoheader 3s;
+            animation-delay: 1s,1s,5s;
+            animation-fill-mode: forwards;
+            color: $main_color;
+            line-height: 2.5rem;
+            .wa-txt{
+                font-size: 2.5rem;
+                color: lightslategray;
+                font-weight: bold;
+            }
+            .wa-txt::first-letter{
+                color: $main_color;
+                font-size: 3.5rem;
+            }
+            .font-2{
+                font-size: 3rem;
+                color: lightslategray;
+            }
+        }
         .container{
             position: relative;
             display: flex;
-            gap: 2rem;
+            gap: 3rem;
             align-items: center;
             justify-content: center;
             padding: 1rem;
-            .start-logo{
-                position: absolute;
-                @include p-middle;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
+            margin-top: auto;
+            .convert{
                 visibility: hidden;
-                animation: showAnimation 0s ease-in 1s,fadein 8s, fadein 500ms infinite alternate, fadeout 3s alternate;
-                animation-delay: 1s,1s,9s,13s;
+                animation: showAnimation 0s ease-in 1s,fadein 500ms alternate;
                 animation-fill-mode: forwards;
-                color: white;
-                .wa-txt{
-                    font-size: 3rem;
-                    animation: fontsizesmall 3s;
-                    animation-delay: 13s;
+                animation-delay: 10s,10s;
+                display: flex;
+                span{
+                    svg{
+                        width: 1.5rem;
+                        height: 1.5rem;
+                        color: lightslategray;
+                        animation: changecoloralter 500ms alternate infinite;
+                        animation-fill-mode: backwards;
+                        animation-delay: 11s;
+                    }
                 }
-                .font-2{
-                    font-size: 4rem;
-                    animation: fontsizesmall 3s;
-                    animation-delay: 13s;
+            }
+            .mac,.phone{
+                position: relative;
+                .mac-img,.phone-img{
+                    img{
+                        visibility: hidden;
+                        animation: showAnimation 0s ease-in 1s,fadein 5s alternate;
+                        animation-fill-mode: forwards;
+                        animation-delay: 6s;
+                    }
+                    .mac-inner-content, .phone-inner-content{
+                        visibility: hidden;
+                        animation: showAnimation 0s ease-in 4s, fadein 5s alternate;
+                        animation-fill-mode: forwards;
+                        animation-delay: 7s, 7s;
+                        position: absolute;
+                        @include px-middle;
+                        display: flex;
+                        flex-direction: column;
+                        background: white;
+                        .wa-navbar{
+                            visibility: hidden;
+                            animation: showAnimation 0s ease-in 4s, fadein 5s alternate;
+                            animation-fill-mode: forwards;
+                            animation-delay: 9s, 9s;
+                            display: flex;
+                            align-items: center;
+                            padding: 0 1rem;
+                            background: white;
+                            @include shadow($property: 'box-shadow');
+                            .wan-brand{
+                                background: $main_color_light;
+                            }
+                            nav{
+                                margin-left: auto;
+                                ul{
+                                    display: flex;
+                                    gap: 0.5rem;
+                                    align-items: center;
+                                    li{
+                                        display: block;
+                                        width: 60px;
+                                        height: 20px;
+                                        background: $main_color_light;
+                                        border-radius: 20px;
+                                    }
+                                }
+                            }
+                        }
+                        .wa-banner{
+                            visibility: hidden;
+                            animation: showAnimation 0s ease-in 4s, fadein 5s alternate;
+                            animation-fill-mode: forwards;
+                            animation-delay: 11s, 11s;
+                            background: $main_color_light;
+                            margin-top: 1px;
+                            padding: 1rem;
+                        }
+                        .wa-icons{
+                            visibility: hidden;
+                            animation: showAnimation 0s ease-in 1s;
+                            animation-fill-mode: forwards;
+                            animation-delay: 13s;
+                            display: flex;
+                            flex-wrap: wrap;
+                            justify-content: center; 
+                            gap: 8px;
+                            .wa-card{
+                                visibility: hidden;
+                                animation: showAnimation 0s ease-in 1s;
+                                animation-fill-mode: forwards;
+                                padding: 1rem;
+                                background: $main_color_light;
+                                border-radius: 0.5rem;
+                                width: 25%;
+                                text-align: center;
+                            }
+                        }
+                    }
                 }
             }
             .mac{
-                position: relative;
+                display: flex;
                 flex: 0 0 60%;
                 .mac-img{
                     img{
-                        visibility: hidden;
-                        animation: showAnimation 0s ease-in 1s,fadein 8s alternate;
-                        animation-fill-mode: forwards;
-                        animation-delay: 15s;
-                        height: 500px;
+                        height: 400px;
                     }
                     .mac-inner-content{
-                        position: absolute;
-                        top: 3rem;
-                        @include px-middle;
-                        width: 100%;
-                        .wa-logo{
-                            visibility: hidden;
-                            animation: showAnimation 0s ease-in 4s, fadein 8s alternate;
-                            animation-fill-mode: forwards;
-                            animation-delay: 17s, 17s;
-                            display: flex;
-                            flex-direction: column;
-                            align-items: center;
+                        width: 78%;
+                        height: calc(100% - 65px);
+                        top: 20px;
+                        .wa-navbar{
+                            .wan-brand{
+                                width: 90px;
+                                height: 30px;
+                                border-radius: 30px;
+                            }
+                            nav{
+                                .menu{
+                                    display: none;
+                                }
+                            }
+                        }
+                        .wa-banner{
+                            height: 200px;
+                        }
+                        .wa-icons{
+                            padding: 1rem;
                         }
                     }
                 }
@@ -63,36 +172,159 @@
                 align-self: end;
                 display: flex;
                 justify-content: center;
+                gap: 2rem;
                 .phone-img{
-                    img{
-                        visibility: hidden;
-                        animation: showAnimation 0s ease-in 1s,fadein 8s alternate;
-                        animation-fill-mode: forwards;
-                        animation-delay: 15s;
-                        height: 380px;
+                    position: relative;
+                    .app-store{
+                        @include px-middle;
+                        top: calc(-50px - 0.5rem);
+                        >img{
+                            width: 50px;
+                        }
+                    }
+                    .device-img{
+                        position: relative;
+                        height: 300px;
+                        z-index: 2;
                     }
                     .phone-inner-content{
-                        position: absolute;
-                        top: 2rem;
-                        height: calc(100% - 2rem);
-                        @include px-middle;
-                        width: 100%;
-                        .wa-logo{
+                        .wa-navbar{
+                            border-radius: 21px 21px 0px 0px;
+                            .wan-brand{
+                                width: 60px;
+                                height: 25px;
+                                border-radius: 25px;
+                            }
+                            nav{
+                                ul{
+                                    display: none !important;
+                                }
+                                .menu,.menu::before,.menu::after{
+                                    display: block;
+                                    width: 20px;
+                                    height: 2px;
+                                    background: $main_color_light;
+                                }
+                                .menu{
+                                    position: relative;
+                                }
+                                .menu::before,.menu:after{
+                                    content: "";
+                                    position: absolute;
+                                    left: 0;
+                                }
+                                .menu::before{
+                                    top: -0.35rem;
+                                }
+                                .menu::after{
+                                    bottom: -0.35rem;
+                                }
+                            }
+                        }
+                        .wa-banner{
+                            height: 75px;
+                        }
+                        .wa-icons{
+                            padding: 1rem 0.5rem;
+                            .wa-card{
+                                width: 17%;
+                            }
+                        }
+                        .wa-hb-menu{
+                            
+                            .hb-menu{
+                                position: absolute;
+                                right: 0;
+                                height: 100%;
+                                background: $main_color_light;
+                                overflow: hidden;
+                                ul{
+                                    margin: 0;
+                                    padding: 0;
+                                    padding-top: 1rem;
+                                    padding-bottom: 0.5rem;
+                                    li{
+                                        display: flex;
+                                        align-items: center;
+                                        list-style: none;
+                                        border-bottom: 1px solid whitesmoke;
+                                        padding: 0.5rem 1rem;
+                                        color: white;
+                                        .menu-item{
+                                            display: block;
+                                            width: 100%;
+                                            height: 10px;
+                                            border-radius: 10px;
+                                            background: white;
+                                        }
+                                    }
+                                    li:first-child{
+                                        justify-content: end;
+                                        padding: 0.5rem 1rem;
+                                    }
+
+                                }
+
+                            }
+                        }
+                    }
+                    .phone-inner-content.ios{
+                        width: 95%;
+                        height: calc(100% - 6px);
+                        top: 3px;
+                        border-radius: 18px;
+                        .wa-navbar{
+                            border-radius: 18px 18px 0px 0px;
+                            padding: 1.5rem 0.5rem 0.5rem 0.5rem;
+                        }
+                        .wa-hb-menu{
+                            display: none;
+                            .hb-menu{
+                                border-radius:0px 21px 21px 0px;
+                                width: 0%;
+                                ul{
+                                    li:first-child{
+                                        height: 24px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .phone-inner-content.android{
+                        width: 90%;
+                        height: calc(100% - 17px);
+                        border-radius: 10px;
+                        top: 6px;
+                        .wa-navbar{
+                            border-radius: 10px 10px 0px 0px;
+                            padding: 1rem 0.5rem 0.5rem 0.5rem;
+                        }
+                        .wa-hb-menu{
                             visibility: hidden;
-                            animation: showAnimation 0s ease-in 4s, fadein 8s alternate;
+                            animation: showAnimation 0s ease-in 1s;
                             animation-fill-mode: forwards;
-                            animation-delay: 17s, 17s;
-                            display: flex;
-                            flex-direction: column;
-                            align-items: center;
-                            span.wa-txt{
-                                font-size: 0.9rem;
+                            animation-delay: 16s;
+                            position: absolute;
+                            width: 100%;
+                            background: #666666a3;
+                            height: 100%;
+                            border-radius: 12px;
+                            .hb-menu{
+                                // width: 75%;
+                                animation: openmenu 5s alternate;
+                                animation-fill-mode: forwards;
+                                animation-delay: 16s;
+                                border-radius:0px 12px 12px 0px;
+                                ul{
+                                    li:first-child{
+                                        height: 17px;
+                                    }
+                                }
                             }
                         }
                     }
                 }
             }
-
         }
     }
 }
@@ -101,7 +333,7 @@
     .home{
         .banner{
             position: relative;
-            background: orange;
+            background: $main_color;
             min-height: calc(100vh - 48px);
             .container{
                 flex-direction: column;
@@ -159,13 +391,25 @@
 }
 @keyframes fontsizesmall {
     to {
-      font-size: 0.1rem;
+      font-size: 2rem;
     }
 }
-@keyframes typing {
-    from { width: 0 }
-    to { 
-        
-        width: 100% 
+@keyframes openmenu {
+    from { width: 0% }
+    to { width: 75% }
+}
+
+@keyframes movetoheader{
+    to{
+        top: 3rem;
+        @include px-middle;
+    }
+}
+@keyframes changecoloralter{
+    from{
+        color: lightslategray;
+    }
+    to{
+        color: $main_color;
     }
 }

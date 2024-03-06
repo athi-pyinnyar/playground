@@ -21,7 +21,12 @@ function component() {
     })
     const navbar = `
     <div class="nav-bar sp-none">
-        <a href="">${siteInfo.site_name[router.lang]}</a>
+        <a class="nav-logo" href="">
+            <span class="special-char">
+                WEBVIEW
+            </span>
+            <span>APP</span>
+        </a>
         <nav>
             <ul>
                 ${lis}

@@ -41,6 +41,23 @@ body{
 }
 .attribute:hover{
     .attr-text{
-        opacity: 0.7;
+        // opacity: 0.7;
     }
+}
+
+.close-menu, .close-menu::before{
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: white;
+    
+}
+
+.close-menu{
+    position: relative;
+    transform: rotate(45deg);
+}
+.close-menu::before{
+    content: "";
+    transform: rotate(90deg);
 }

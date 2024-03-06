@@ -1,3 +1,3 @@
 export const siteInfo = {
-    site_name: {eng: 'MPT Webview Playground'}
+    site_name: {eng: 'WEBVIEW APP'}
 }
