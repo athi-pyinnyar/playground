@@ -44,15 +44,25 @@
                 animation-fill-mode: forwards;
                 animation-delay: 10s,10s;
                 display: flex;
-                span{
-                    svg{
-                        width: 1.5rem;
-                        height: 1.5rem;
-                        color: lightslategray;
-                        animation: changecoloralter 500ms alternate infinite;
-                        animation-fill-mode: backwards;
-                        animation-delay: 11s;
-                    }
+                width: 20px;
+                height: 20px;
+                .c-arrow{
+                    display: block;
+                    background: lightslategray;
+                    animation: changecoloralter 500ms alternate infinite;
+                    animation-fill-mode: backwards;
+                    animation-delay: 11s;
+                    width: 11px;
+                    height: 2px;
+                    transform: rotate(45deg);
+                }
+                .c-arrow:before{
+                    content: "";
+                    display: block;
+                    width: 11px;
+                    height: 2px;
+                    background: lightslategray;
+                    transform: rotate(90deg);
                 }
             }
             .mac,.phone{
@@ -147,6 +157,7 @@
                         height: calc(100% - 65px);
                         top: 20px;
                         .wa-navbar{
+                            padding: 1rem;
                             .wan-brand{
                                 width: 90px;
                                 height: 30px;
@@ -332,31 +343,65 @@
 @media only screen and (max-width: 767px) {
     .home{
         .banner{
-            position: relative;
-            background: $main_color;
             min-height: calc(100vh - 48px);
+            padding: 0;
+            .start-logo{
+                width: 100%;
+                .wa-txt{
+                    font-size: 2rem;
+                }
+                .wa-txt::first-letter{
+                    font-size: 2.5rem;
+                }
+                .font-2{
+                    font-size: 1.75rem;
+                }
+            }
             .container{
                 flex-direction: column;
-                .logo-container{
-                    display: flex;
-                    flex-direction: column;
-                    flex: auto;
-                    align-items: center;
-                    justify-content: center;
-                    h1{
-                        font-size: 2.5rem;
-                    }
-                    h3{
-                        font-size: 3rem;
+                .mac{
+                    flex: unset;
+                    .mac-img{
+                        >img{
+                            width: 100%;
+                            height: unset;
+                        }
+                        .mac-inner-content{
+                            height: calc(100% - 35px);
+                            top: 11px;
+                            .wa-navbar{
+                                padding: 0.5rem;
+                                .wan-brand{
+                                    width: 40px;
+                                    height: 18px;
+                                }
+                                nav{
+                                    ul{
+                                        li{
+                                            width: 20px;
+                                            height: 9px;
+                                        }
+                                    }
+                                }
+                            }
+                            .wa-banner{
+                                padding: 0.5rem;
+                            }
+                            .wa-icons{
+                                padding: 0.5rem;
+                                .wa-card{
+
+                                    width: 25%;
+                                    height: 15px;
+                                    padding: 0;
+                                }
+                            }
+                        }
                     }
                 }
-                .ios-phone{
-                    padding: 1rem;
-                    img{
-                        height: calc(100vh - 300px);
-                    }
+                .phone{
+                    align-self: unset;
                 }
-    
             }
         }
     }

@@ -13,6 +13,9 @@ body{
         max-width: 90rem;
         margin: 0 auto;
     }
+    ul{
+        margin: 0;
+    }
 }
 
 .d-none{
@@ -60,4 +63,9 @@ body{
 .close-menu::before{
     content: "";
     transform: rotate(90deg);
+}
+
+
+@media only screen and (max-width: 767px) {
+
 }

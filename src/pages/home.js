@@ -55,10 +55,10 @@ const getMenus = () => {
     }
     return menu_html
 }
-const getConverter = (counts) => {
+const getConverter = (counts, arrow) => {
     let menu_html = ""
     for (let i = 1; i <= counts; i++) {
-        menu_html += `<span>${icons.right_arrow}</span>`
+        menu_html += `<span>${icons[arrow]}</span>`
     }
     return menu_html
 }
@@ -98,7 +98,7 @@ const component = () => {
                     </div>
                 </div>
                 <div class="convert">
-                    ${getConverter(3)}
+                    <span class="c-arrow"></span>
                 </div>
                 <div class="phone">
                     <div class="phone-img">
